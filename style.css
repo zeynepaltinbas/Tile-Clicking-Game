@@ -1,0 +1,105 @@
+body { margin: 0; font-family: 'Roboto', sans-serif; background: #eee; overflow: hidden; }
+
+.screen {
+    position: fixed; width: 100%; height: 100%;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.hidden { display: none; }
+
+#coverPage { background: black; cursor: pointer; color: white; }
+.membersCard { background: #33334d; padding: 25px; border-radius: 10px; width: 300px; }
+.membersCard h2 { color: #88f; margin-top: 0; }
+.info h3 { margin: 0; font-size: 18px; color: #fff; }
+.memberRow { display: flex; align-items: center; margin-bottom: 12px; }
+.memberRow img { 
+    width: 60px; 
+    height: 80px; 
+    border-radius: 50%; 
+    margin-right: 15px; 
+    border: 2px solid #fff; 
+}
+.info p { margin: 0; font-size: 13px; color: #ccc; }
+
+#waitScreen { 
+    background: black; 
+    color: white; 
+    transition: opacity 1s ease; 
+    opacity: 1; 
+    z-index: 100; 
+}
+#waitScreen.fade-out { opacity: 0; }
+#countText { font-size: 150px; }
+
+.stats { 
+    display: flex; 
+    width: 400px; 
+    justify-content: space-around; 
+    margin-bottom: 15px;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+}
+.box h4 { 
+    margin: 0 0 5px 0; 
+    font-weight: bold; 
+    font-size: 20px;
+    color: #666; 
+}
+.box div { font-size: 45px; line-height: 1; font-weight: bold;}
+#scoreText { font-size: 70px; }
+.greenText { color: #2ecc71; }
+.redText { color: #e74c3c; }
+
+#boardContainer { position: relative; width: 400px; height: 400px; background: white; border: 1px solid #ccc; }
+#grid { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; height: 100%; }
+.tile { border: 0.5px solid #ddd; position: relative; cursor: pointer; background-color: white; }
+
+.black { background: black; animation: fadeIn 500ms forwards; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.hit { animation: fadeToWhite 600ms forwards; }
+@keyframes fadeToWhite { from { background-color: #a2f2b7; } to { background-color: white; } }
+
+.popup {
+    position: absolute; width: 100%; text-align: center;
+    top: 50%; left: 0; transform: translateY(-50%);
+    font-size: 24px; color: #27ae60; font-weight: bold;
+    animation: fadeOpacity 600ms forwards;
+}
+
+@keyframes fadeOpacity { from { opacity: 1; } to { opacity: 0; } }
+
+#tapMessage { position: absolute; width: 100%; top: 30%; text-align: center; font-size: 28px; color: #ccc; pointer-events: none; }
+#endText { 
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    text-align: center;
+    font-size: 45px;
+    color: red;
+    text-shadow: 17px -5px 6px rgba(36,15,10,0.51);
+    font-weight: bold;
+    z-index: 5; 
+}
+
+#barWrap { width: 400px; height: 10px; background: #00f; margin-top: 25px; }
+#pointBar { height: 100%; background: #0ff; width: 100%; transition: width 100ms linear; }
+
+#restartText { 
+    margin-top: 20px; 
+    font-size: 22px; 
+    animation: pulsate 1s ease-in-out infinite; 
+}
+
+@keyframes pulsate { 
+    0% { transform: scale(1); } 
+    50% { transform: scale(1.15); } 
+    100% { transform: scale(1); } 
+}

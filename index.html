@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTIS 255 PROJECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="coverPage" class="screen">
+        <div class="membersCard">
+            <h2>Project Members</h2>
+            <div class="memberRow">
+                <img src="./images/zeynep.jpeg">
+                <div class="info">
+                    <h3>Zeynep Altınbaş</h3>
+                    <p>Section: 04</p>
+                    <p>22402129</p>
+                </div>
+            </div>
+            <div class="memberRow">
+                <img src="./images/dilek.JPG">
+                <div class="info">
+                    <h3>Dilek Avcı</h3>
+                    <p>Section: 01</p>
+                    <p>22303706</p>
+                </div>
+            </div>
+            <div class="memberRow">
+                <img src="./images/elif.JPG">
+                <div class="info">
+                    <h3>Elif Kurugül</h3>
+                    <p>Section: 04</p>
+                    <p>22402635</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="waitScreen" class="screen hidden">
+        <h1 id="countText">3</h1>
+    </div>
+
+    <div id="gameScreen" class="screen hidden">
+        <div class="stats">
+            <div class="box">
+                <h4>HI-SCORE</h4>
+                <div id="hiScoreText">0</div>
+            </div>
+            <div class="box">
+                <h4>SCORE</h4>
+                <div id="scoreText" class="greenText">0</div>
+            </div>
+            <div class="box">
+                <h4>TIME</h4>
+                <div id="timerText" class="redText">10</div>
+            </div>
+        </div>
+
+        <div id="boardContainer">
+            <div id="grid"></div>
+            <div id="tapMessage">Tap the black tiles!</div>
+            <div id="endText" class="hidden"></div>
+        </div>
+
+        <div id="barWrap">
+            <div id="pointBar"></div>
+        </div>
+
+        <div id="restartText" class="hidden">F5 to play again</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
